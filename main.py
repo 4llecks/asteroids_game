@@ -39,7 +39,6 @@ def main():
         screen.fill((0,0,0)) # fill screen with black background
         for obj in updatable:
             obj.update(dt)
-            if obj.position
         for asteroid in asteroids:
             for bullet in shots:
                 if bullet.check_collision(asteroid):
@@ -51,7 +50,9 @@ def main():
                 exit()
         for obj in drawable:
             obj.draw(screen)
+
         osd_var(screen, int(clock.get_fps()), osd_font, (0,0)) # FPS counter
+        osd_var(screen, str(player_object.position), osd_font, (0,16))
         pygame.display.flip()
         dt = clock.tick(120)/1000 # Limits FPS to 60
 

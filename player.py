@@ -32,6 +32,7 @@ class Player(CircleShape):
 
     def move(self, dt):
         self.position += self.current_speed * dt
+        self.wrap_around()
             
     def update(self, dt):
         keys = pygame.key.get_pressed()
